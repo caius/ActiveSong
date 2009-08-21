@@ -11,9 +11,14 @@ I was following the #songsincode meme on twitter, and finding it hilarious. Then
 	>> require "active_song"
 	=> true
 	>> song = ActiveSong.find(:artist => "Moby", :track => "Another Woman")
-	=> "You leave your home for days and days\nAnd I know, said I know\nYou leave your home for\n weekly access temporary API limited free lyricsfly.com "
+	=> "You leave your home for days and days\nAnd I know, said I know\nYou leave your home\n "
 	>> song.play!
 	{{ Sound comes out the speakers here }}
+
+The lyrics are from [LyricsFly][] and you might need a new api key from [here][flyapi] if the current one has expired.
+
+[LyricsFly]: http://lyricsfly.com/
+[flyapi]: http://lyricsfly.com/api/
 
 ### Licence
 

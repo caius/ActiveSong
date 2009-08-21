@@ -22,6 +22,8 @@ class ActiveSong
     
     # Grab the right bit of the response
     result = get("", :query => {:a => encode_string(params[:artist]), :t => encode_string(params[:track])})["start"]["sg"].first["tx"]
+    # Remove the crap lyricfly adds because we don't have a proper API key
+    result.gsub!(/((weekly|limited|access|API|temporary|free|lyricsfly.com) ?){7}/, "")
     # Sort it out into a proper format
     result.gsub!("[br]", "\n").gsub!(/\n+/, "\n")
     # Grab the first 4 lines and return it as an ActiveSong::Result
